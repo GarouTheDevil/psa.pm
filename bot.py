@@ -4,7 +4,7 @@ import time
 import requests
 from bs4 import BeautifulSoup
 
-url = ""
+url = input("Enter the Url : ")
 
 client = requests.Session()
 h = {
