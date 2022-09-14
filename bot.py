@@ -1,3 +1,11 @@
+import re
+import time
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urlparse
+
+url = ""
+
 client = requests.Session()
 h = {
     'upgrade-insecure-requests': '1',
