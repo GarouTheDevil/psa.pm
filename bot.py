@@ -1,8 +1,12 @@
-import base64
+import os
 import re
+from transition import Translation
 import time
+import cloudscraper
 import requests
+from urllib.parse import urlparse
 from bs4 import BeautifulSoup
+from os import environ
 
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
