@@ -22,7 +22,7 @@ from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 bot = Client('LinkByPass bot',
              api_id= 1543212,
              api_hash= "d47de4b25ddf79a08127b433de32dc84",
-             bot_token= "5495870847:AAFjzESFYEn1kyM5tWzpiELkAByyTc5PYEc")
+             bot_token= "5462389029:AAFxRhyhFY7PHKL8NUyiBN9gpR6gTkp6zao")
 
 
 @bot.on_message(filters.command('start'))
