@@ -18,13 +18,12 @@ from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 API_ID = environ.get('API_ID')
 API_HASH = environ.get('API_HASH')
 BOT_TOKEN = environ.get('BOT_TOKEN')
-CRYPT = 'ajRmMzd2ZEdxL055ZC9vMHlwNGZwZUE4Zm9MSzFUVDRETU9ESm4xU1lqcz0%3D'
 #API_KEY = environ.get('API_KEY')
 
 bot = Client('LinkByPass bot',
              api_id= "1543212",
              api_hash= "d47de4b25ddf79a08127b433de32dc84",
-             bot_token= "5462389029:AAEtTZT0mopLzVGM45SUmKHIFto_nEjc48M")
+             bot_token= "5495870847:AAFjzESFYEn1kyM5tWzpiELkAByyTc5PYEc")
 
 
 @bot.on_message(filters.command('start'))
