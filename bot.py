@@ -184,3 +184,58 @@ async def psa_bypass(url):
         return res.json()['url'].replace('\/','/')
     except: 
         return "An Error Occured "
+
+# -------------------------------------------
+
+@bot.on_callback_query()
+async def button(bot, update):
+    if update.data == "start":
+        await update.message.edit_text(
+            text=Translation.START_TEXT.format(update.from_user.mention),
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                        InlineKeyboardButton("HELP", callback_data = "ghelp"),
+                        InlineKeyboardButton("ABOUT", callback_data = "about"),
+                        InlineKeyboardButton("CLOSE", callback_data = "close")
+                ]
+            ]
+        ))
+    elif update.data == "ghelp":
+        await update.message.edit_text(
+            text=Translation.HELP_TEXT,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('ABOUT', callback_data = "about"),
+                    InlineKeyboardButton('CLOSE', callback_data = "close")
+                ]
+            ]
+        ))
+    elif update.data == "about":
+        await update.message.edit_text(
+            text=Translation.ABOUT_TEXT,
+            disable_web_page_preview = True,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('HELP', callback_data = "ghelp"),
+                    InlineKeyboardButton('CLOSE', callback_data = "close")
+                ]
+            ]
+        ))
+    elif update.data == "close":
+        await update.message.delete()
+        try:
+            await update.message.reply_to_message.delete()
+        except:
+            pass
+   
+    else:
+       pass
+
+
+
+bot.run()
