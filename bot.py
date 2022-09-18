@@ -128,8 +128,25 @@ async def about(bot, update):
         reply_to_message_id=update.message_id
             )
 
-url = input("Enter the Url : ")
+#@bot.on_message(filters.regex(r"(?:(?:https?|ftp):\/\/)?[\w/\-?=%.]+\.[\w/\-?=%.]+"))
+@bot.on_message(filters.command('psa'))
+async def link_handler(bot, message):
+ # link = message.matches[0].group(0)
+  l = message.text.split(' ', 1)
 
+  if len(l) == 1:
+        return await message.reply_text('Omly Psa.pm Links Supoorted')
+  link = l[1]
+  mess = await message.reply_text("**Bypassing...⏳**",quote=True)
+  if 'try2link.com' in link:
+    try:
+        short_link = await gplinks(link)
+      #  mess = await message.reply_text("**Bypassing...⏳**",quote=True)
+        await mess.edit_text(f"**Bypassed URL** : {short_link} \n\n ©cc: {message.from_user.mention}",disable_web_page_preview=True)
+    except Exception as e:
+        await mess.edit_text(f"**Error** : {e}")
+
+async def psa_bypass(url):
 client = requests.Session()
 h = {
     'upgrade-insecure-requests': '1',
@@ -160,5 +177,3 @@ res = client.post(
     }, data=data
 )
 out = res.json()['url'].replace('\/','/')
-
-print(out)
