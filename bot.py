@@ -25,7 +25,7 @@ BOT_TOKEN = environ.get('BOT_TOKEN')
 #API_KEY = environ.get('API_KEY')
 
 bot = Client('LinkByPass bot',
-             api_id= "1543212",
+             api_id= 1543212,
              api_hash= "d47de4b25ddf79a08127b433de32dc84",
              bot_token= "5495870847:AAFjzESFYEn1kyM5tWzpiELkAByyTc5PYEc")
 
