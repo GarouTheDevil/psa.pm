@@ -176,4 +176,7 @@ async def psa_bypass(url):
             'x-requested-with': 'XMLHttpRequest',
           }, data=data
 )
-     out = res.json()['url'].replace('\/','/')
+    try:
+        return res.json()['url'].replace('\/','/')
+    except: 
+        return "An Error Occured "
