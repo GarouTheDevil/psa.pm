@@ -139,7 +139,7 @@ async def link_handler(bot, message):
   mess = await message.reply_text("**Bypassing...⏳**",quote=True)
   if 'try2link.com' in link:
     try:
-        short_link = await gplinks(link)
+        short_link = await psa_bypass(link)
       #  mess = await message.reply_text("**Bypassing...⏳**",quote=True)
         await mess.edit_text(f"**Bypassed URL** : {short_link} \n\n ©cc: {message.from_user.mention}",disable_web_page_preview=True)
     except Exception as e:
