@@ -19,6 +19,12 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, Message
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel 
 
+API_ID = environ.get('API_ID')
+API_HASH = environ.get('API_HASH')
+BOT_TOKEN = environ.get('BOT_TOKEN')
+# CRYPT = 'ajRmMzd2ZEdxL055ZC9vMHlwNGZwZUE4Zm9MSzFUVDRETU9ESm4xU1lqcz0%3D'
+
+
 bot = Client('LinkByPass bot',
              api_id= 1543212,
              api_hash= "d47de4b25ddf79a08127b433de32dc84",
