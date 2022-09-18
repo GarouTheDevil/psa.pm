@@ -142,7 +142,7 @@ async def link_handler(bot, message):
         return await message.reply_text('Omly Psa.pm Links Supoorted')
   link = l[1]
   mess = await message.reply_text("**Bypassing...⏳**",quote=True)
-  if 'try2link.com' in link:
+  if 'psa.pm' in link:
     try:
         short_link = await psa_bypass(link)
       #  mess = await message.reply_text("**Bypassing...⏳**",quote=True)
